@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Scoreboard Cerdas Cermat</title>
+
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #fdf6ec;
+}
+
+.section { display: none; }
+.active { display: block; }
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 6px;
+}
+
+input {
+  width: 40px;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<h1>🏆 Scoreboard</h1>
+
+<!-- BABAK 1 -->
+<div id="babak1" class="section active">
+<h2>Babak 1 (Soal Wajib)</h2>
+<table>
+<tbody>
+<tr><td>A</td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td class="s1">0</td></tr>
+<tr><td>B</td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td class="s1">0</td></tr>
+<tr><td>C</td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td class="s1">0</td></tr>
+<tr><td>D</td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td class="s1">0</td></tr>
+<tr><td>E</td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td class="s1">0</td></tr>
+<tr><td>F</td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td><input class="b1"></td><td class="s1">0</td></tr>
+</tbody>
+</table>
+
+<button onclick="hitung1()">Update Skor</button>
+<button onclick="pindah('babak1','babak2')">Lanjut Babak 2</button>
+</div>
+
+<!-- BABAK 2 -->
+<div id="babak2" class="section">
+<h2>Babak 2 (Soal Rebutan)</h2>
+<table>
+<tbody>
+<tr><td>A</td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td class="s2">0</td></tr>
+<tr><td>B</td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td class="s2">0</td></tr>
+<tr><td>C</td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td class="s2">0</td></tr>
+<tr><td>D</td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td class="s2">0</td></tr>
+<tr><td>E</td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td class="s2">0</td></tr>
+<tr><td>F</td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td><input class="b2"></td><td class="s2">0</td></tr>
+</tbody>
+</table>
+
+<button onclick="hitung2()">Update Skor</button>
+<button onclick="pindah('babak2','babak3')">Lanjut Babak 3</button>
+</div>
+
+<!-- BABAK 3 -->
+<div id="babak3" class="section">
+<h2>Babak 3 (Soal Resiko)</h2>
+<table>
+<tbody>
+<tr><td>A</td><td><input class="b3"></td><td><input class="b3"></td><td><input class="b3"></td><td class="s3">0</td></tr>
+<tr><td>B</td><td><input class="b3"></td><td><input class="b3"></td><td><input class="b3"></td><td class="s3">0</td></tr>
+<tr><td>C</td><td><input class="b3"></td><td><input class="b3"></td><td><input class="b3"></td><td class="s3">0</td></tr>
+<tr><td>D</td><td><input class="b3"></td><td><input class="b3"></td><td><input class="b3"></td><td class="s3">0</td></tr>
+<tr><td>E</td><td><input class="b3"></td><td><input class="b3"></td><td><input class="b3"></td><td class="s3">0</td></tr>
+<tr><td>F</td><td><input class="b3"></td><td><input class="b3"></td><td><input class="b3"></td><td class="s3">0</td></tr>
+</tbody>
+</table>
+
+<button onclick="hitung3()">Update Skor</button>
+<button onclick="hasil()">Lihat Hasil</button>
+</div>
+
+<!-- HASIL -->
+<div id="hasil" class="section">
+<h2>Hasil Akhir</h2>
+<table>
+<tr><td>A</td><td class="total">0</td></tr>
+<tr><td>B</td><td class="total">0</td></tr>
+<tr><td>C</td><td class="total">0</td></tr>
+<tr><td>D</td><td class="total">0</td></tr>
+<tr><td>E</td><td class="total">0</td></tr>
+<tr><td>F</td><td class="total">0</td></tr>
+</table>
+</div>
+
+<script>
+function pindah(a,b){
+  document.getElementById(a).classList.remove("active");
+  document.getElementById(b).classList.add("active");
+}
+
+function hitung1(){
+  let rows=document.querySelectorAll(".s1");
+  let inputs=document.querySelectorAll(".b1");
+  for(let i=0;i<6;i++){
+    let total=0;
+    for(let j=0;j<5;j++){
+      total+=parseInt(inputs[i*5+j].value)||0;
+    }
+    rows[i].innerText=total;
+  }
+}
+
+function hitung2(){
+  let rows=document.querySelectorAll(".s2");
+  let inputs=document.querySelectorAll(".b2");
+  for(let i=0;i<6;i++){
+    let total=0;
+    for(let j=0;j<10;j++){
+      total+=parseInt(inputs[i*10+j].value)||0;
+    }
+    rows[i].innerText=total;
+  }
+}
+
+function hitung3(){
+  let rows=document.querySelectorAll(".s3");
+  let inputs=document.querySelectorAll(".b3");
+  for(let i=0;i<6;i++){
+    let total=0;
+    for(let j=0;j<3;j++){
+      total+=parseInt(inputs[i*3+j].value)||0;
+    }
+    rows[i].innerText=total;
+  }
+}
+
+function hasil(){
+  hitung3();
+
+  let t1=[...document.querySelectorAll(".s1")].map(x=>parseInt(x.innerText)||0);
+  let t2=[...document.querySelectorAll(".s2")].map(x=>parseInt(x.innerText)||0);
+  let t3=[...document.querySelectorAll(".s3")].map(x=>parseInt(x.innerText)||0);
+
+  let total=document.querySelectorAll(".total");
+
+  for(let i=0;i<6;i++){
+    total[i].innerText=t1[i]+t2[i]+t3[i];
+  }
+
+  pindah("babak3","hasil");
+}
+</script>
+
+</body>
+</html>
